@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/**/*.rb
+    - features/**/*/rb
+    - test/**/*.rb
+  NewCops: enable
+
+# Not worried about block length for RSpec files, so...
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+    - test/**/*.rb
+    - features/**/*.rb
