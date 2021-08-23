@@ -1,0 +1,24 @@
+<%= form_for(@meter) do |f| %>
+  <% if @meter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meter.errors.count, "error") %> prohibited this meter from being saved:</h2>
+
+      <ul>
+      <% @meter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reading %><br>
+    <%= f.text_field :reading %>
+  </div>
+  <div class="field">
+    <%= f.input :img, as: :file, accept: 'image/png'%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
